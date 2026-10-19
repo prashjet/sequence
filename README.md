@@ -1,4 +1,4 @@
 # sequence
 A python package for numerical sequences
 
-For example, the even numbers
+For example, the even numbers. Or, the odd numbers!
