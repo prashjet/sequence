@@ -34,7 +34,7 @@ def geometric(n, start=1.0, ratio=2.0):
     
     Examples:
         >>> geometric(4)
-        [1., 2., 4., 8.]
+        [1.0, 2.0, 4.0, 8.0]
     """
     if not isinstance(n, int) or isinstance(n, bool):
         raise TypeError("n must be an integer.")
@@ -42,3 +42,35 @@ def geometric(n, start=1.0, ratio=2.0):
         raise ValueError("n must be non-negative.")
 
     return [start * ratio**k for k in range(n)]
+
+
+def fibonacci(n):
+    """Return the first n Fibonacci numbers, starting with 0 and 1.
+
+    Args:
+        n (int): Number of terms; a non-negative Python integer, excluding bool.
+
+    Returns:
+        list: The first n terms, or an empty list when n is zero.
+
+    Raises:
+        TypeError: If n is not a Python int or is a bool.
+        ValueError: If n is negative.
+
+    Examples:
+        >>> fibonacci(6)
+        [0, 1, 1, 2, 3, 5]
+        >>> fibonacci(0)
+        []
+    """
+    if not isinstance(n, int) or isinstance(n, bool):
+        raise TypeError("n must be an integer")
+    if n < 0:
+        raise ValueError("n must be non-negative")
+
+    values = []
+    a, b = 0, 1
+    for _ in range(n):
+        values.append(a)
+        a, b = b, a + b
+    return values
